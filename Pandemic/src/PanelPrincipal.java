@@ -20,6 +20,7 @@ public class PanelPrincipal extends JPanel implements ActionListener {
     private JButton botonInformacion;
     private JButton botonPuntuaciones;
     private JButton botonSalir;
+    private JButton botonNuevaPartida;
 
     PanelPrincipal(String rutaImagen, Marco marco) {
         this.marco = marco;
@@ -27,12 +28,13 @@ public class PanelPrincipal extends JPanel implements ActionListener {
         setBorder(new EmptyBorder(150, 0, 0, 0));
         imagenDeFondo = new ImageIcon(rutaImagen).getImage();
 
-        JButton botonNuevaPartida = crearBoton("src/img/Nueva_Partida-Boton-1.png", 512, 64);
+        botonNuevaPartida = crearBoton("src/img/Nueva_Partida-Boton-1.png", 512, 64);
         JButton botonCargarPartida = crearBoton("src/img/Cargar_Partida-Boton-1.png", 512, 64);
         botonInformacion = crearBoton("src/img/Instrucciones-Boton-1.png", 512, 64);
         botonPuntuaciones = crearBoton("src/img/Puntuaciones-Boton-1.png", 512, 64);
         botonSalir = crearBoton("src/img/Salir-Boton-3.png", 256, 64);
         
+        botonNuevaPartida.addActionListener(this);
         botonInformacion.addActionListener(this);
         botonSalir.addActionListener(this);
         botonPuntuaciones.addActionListener(this);
@@ -79,6 +81,13 @@ public class PanelPrincipal extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+    	if (e.getSource() == botonNuevaPartida) {
+    		setVisible(false);
+            marco.getContentPane().removeAll(); 
+            marco.getContentPane().add(new PantallaPartida("src/img/BackGround_Marks_1.png", marco));
+            marco.revalidate(); 
+            marco.repaint(); 
+    	}
     	if (e.getSource() == botonInformacion) {
             setVisible(false);
             marco.getContentPane().removeAll(); 
