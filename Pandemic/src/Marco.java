@@ -12,15 +12,17 @@ public class Marco extends JFrame {
         GraphicsDevice dispositivo = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Pandemic");
+        setSize(1366, 748);
 
-        if (dispositivo.isFullScreenSupported()) {
+        /*if (dispositivo.isFullScreenSupported()) {
             setResizable(true);
             dispositivo.setFullScreenWindow(this);
         } else {
             System.err.println("Pantalla completa no soportada");
             setBounds(0, 0, 1024, 640);
         }
-
+		*/
+        
         setMinimumSize(new Dimension(1024, 640));
 
         String rutaImagenFondo = "src/img/FondoPantallaCompleto-1.png";

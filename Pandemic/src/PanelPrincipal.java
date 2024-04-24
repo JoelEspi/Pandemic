@@ -84,7 +84,7 @@ public class PanelPrincipal extends JPanel implements ActionListener {
     	if (e.getSource() == botonNuevaPartida) {
     		setVisible(false);
             marco.getContentPane().removeAll(); 
-            marco.getContentPane().add(new PantallaPartida("src/img/BackGround_Marks_1.png", marco));
+            marco.getContentPane().add(new PantallaDificultad("src/img/PantallaDificultad.png", marco));
             marco.revalidate(); 
             marco.repaint(); 
     	}
